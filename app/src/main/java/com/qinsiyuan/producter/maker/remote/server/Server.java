@@ -1,10 +1,5 @@
 package com.qinsiyuan.producter.maker.remote.server;
 
-import android.util.Log;
-
-import com.qinsiyuan.producter.utils.TranslateBuffer;
-
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.HashMap;

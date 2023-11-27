@@ -1,15 +1,8 @@
 package com.qinsiyuan.producter.utils;
 
-public abstract class TranslateBuffer {
-    private final byte[] buffer;
+public interface TranslateBuffer {
 
-    protected TranslateBuffer(int size) {
-        this.buffer = new byte[size];
-    }
+    int size();
 
-    public abstract int size();
-
-    public byte[] getBuffer() {
-        return buffer;
-    }
+    byte[] getBuffer();
 }

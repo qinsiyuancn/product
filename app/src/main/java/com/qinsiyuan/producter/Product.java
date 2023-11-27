@@ -20,6 +20,7 @@ public class Product {
     private final String name;
     private final Maker maker;
     private final int parameter;
+
     private final String content;
 
     public Product(String name, String content, Maker maker, int parameter) {
@@ -35,5 +36,9 @@ public class Product {
 
     public void make() throws IOException {
         maker.make(parameter);
+    }
+
+    public String getContent() {
+        return content;
     }
 }

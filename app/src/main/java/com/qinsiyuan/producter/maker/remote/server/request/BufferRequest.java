@@ -1,6 +1,5 @@
 package com.qinsiyuan.producter.maker.remote.server.request;
 
-import com.qinsiyuan.producter.utils.FinalTranslateBuffer;
 import com.qinsiyuan.producter.utils.TranslateBuffer;
 
 import java.io.IOException;
@@ -15,6 +14,12 @@ public class BufferRequest implements Request{
     }
     @Override
     public void request() throws IOException {
-        stream.write(buffer.getBuffer(), 0, buffer.size());
+        byte[] msg = buffer.getBuffer();
+        int size = buffer.size();
+        if(msg != null && size != 0) {
+
+            stream.write(msg, 0, size);
+            stream.flush();
+        }
     }
 }

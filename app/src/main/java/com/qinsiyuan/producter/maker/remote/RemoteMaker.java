@@ -10,19 +10,6 @@ import java.io.IOException;
 
 public class RemoteMaker extends Maker {
 
- /*   public static class RemoteMakerHelper extends Maker.Helper {
-        public RemoteMakerHelper(String name) {
-            super(name);
-        }
-        @Override
-        public Maker get(String jsonString) throws JSONException {
-            JSONObject json = new JSONObject(jsonString);
-            return new RemoteMaker(json.getString("name"),
-                    Builder.builderManager.get(json.getString("builder")),
-                    Server.getInstance(json.getString("server"))
-            );
-        }
-    }*/
     private final Request request;
     private final Builder builder;
     public RemoteMaker(String name, Builder builder, Request request) {
@@ -50,8 +37,5 @@ public class RemoteMaker extends Maker {
         if(request == null) throw new ObjectIOException("server is null");
         builder.build(parameter);
         request.request();
-    }
-    public void update(){
-        builder.reportPamameter();
     }
 }
